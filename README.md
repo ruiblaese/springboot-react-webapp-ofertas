@@ -77,7 +77,7 @@ Mais uma vez, qualquer dúvida maior pode nos perguntar, boa sorte!
 
 
 ## Projeto
-Tecnologias utilizadas: 
+### Tecnologias utilizadas: 
 - Java + SpringBoot
 - PostgreSQL
 - Docker
@@ -104,7 +104,7 @@ Tecnologias utilizadas:
 
 
 ## Autor
-[Rui Richard Blaese](https://www.linkedin.com/in/ruiblaese/)
+[Rui Richard Blaese](https://www.linkedin.com/in/ruiblaese/)   
 ruiblaese@gmail.com
 
 
