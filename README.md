@@ -6,6 +6,8 @@
 - [Contexto](#contexto)
 - [Projeto](#projeto)  
   - [Instruções](#instruções)
+  - [Acesso Deploy da aplicação na AWS](#aws)
+- [Referencias](#referencias)
 - [Autor](#autor)
 
 ## Contexto
@@ -76,12 +78,29 @@ Mais uma vez, qualquer dúvida maior pode nos perguntar, boa sorte!
 
 ## Projeto
 Tecnologias utilizadas: 
- - Java + SpringBoot
- - PostgreSQL
- - Docker
- - Docker Compose
+- Java + SpringBoot
+- PostgreSQL
+- Docker
+- Docker Compose
 
 ### Instruções
+- [Instalar Git](https://www.digitalocean.com/community/tutorials/como-instalar-o-git-no-ubuntu-18-04-pt)
+- [Instalar Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+- [Instalar Docker-Compose](https://docs.docker.com/compose/install/)
+- [Instalar Java 8 \ OpenJDK 8 \ Amazon Correto 8](https://docs.aws.amazon.com/pt_br/corretto/latest/corretto-8-ug/generic-linux-install.html)
+- git clone
+- compilar/gerar .jar 
+`cd cdpu && cd backend && ./mvnw install`
+- gerar imagem docker
+`make build-docker-images`
+- subir projeto com docker-compose
+`docker-compose up -d`
+
+### AWS
+- Acesso Deploy da aplicação na AWS [aqui](http://54.162.76.18/) *(em testes/desenvolvimento)
+
+## Referencias
+ - https://stackoverflow.com/questions/32074631/spring-boot-application-without-a-datasource
 
 
 ## Autor
