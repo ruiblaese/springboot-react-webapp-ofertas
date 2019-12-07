@@ -5,11 +5,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.cdpu.entity.BuyOption;
 import com.cdpu.repository.BuyOptionRepository;
 import com.cdpu.service.BuyOptionService;
 
+@Service
 public class BuyOptionServiceImpl implements BuyOptionService {
 
 	@Autowired
