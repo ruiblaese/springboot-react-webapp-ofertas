@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 @Data
-public class BuyOption {
+public class BuyOptionDTO {
 
 	private Long id;
 	@NotNull(message = "Insira o id da oferta")
