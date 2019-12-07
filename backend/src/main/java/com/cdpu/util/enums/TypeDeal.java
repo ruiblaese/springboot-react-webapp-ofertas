@@ -13,4 +13,13 @@ public enum TypeDeal {
     public int getValue() {
         return value;
     }
+    
+    public static TypeDeal fromString(String text) {
+        for (TypeDeal b : TypeDeal.values()) {
+            if (b.name().equalsIgnoreCase(text)) {
+                return b;
+            }
+        }
+        return null;
+    }
 }

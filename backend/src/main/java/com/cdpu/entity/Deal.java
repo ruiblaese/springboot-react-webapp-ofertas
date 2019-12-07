@@ -33,23 +33,23 @@ public class Deal implements Serializable{
 	@Column(nullable = false)
 	private String text;
 	
-	@Column(nullable = false)
+	@Column(name = "create_date", nullable = false)
 	private Date createDate;
 	
-	@Column(nullable = false)
+	@Column(name = "publish_date", nullable = false)
 	private Date publishDate;
 	
-	@Column(nullable = false)
+	@Column(name = "end_date", nullable = false)
 	private Date endDate;
-	
-	@Column(nullable = false)
-	private String url;
-	
-	@Column(nullable = false)
+		
+	@Column(name = "total_sold",nullable = false)
 	private Long totalSold;
 	
 	@Column(nullable = false)
 	@Enumerated(EnumType.ORDINAL)
 	private TypeDeal type;
+	
+	@Column(nullable = true)
+	private String url;
 	
 }

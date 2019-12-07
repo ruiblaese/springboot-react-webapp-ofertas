@@ -5,8 +5,10 @@
 - [Índice](#índice)
 - [Contexto](#contexto)
 - [Projeto](#projeto)  
+  - [Tecnologias](#tecnologias-utilizadas)
   - [Instruções](#instruções)
   - [Acesso Deploy da aplicação na AWS](#aws)
+  - [Melhorias](#melhorias)
 - [Referencias](#referencias)
 - [Autor](#autor)
 
@@ -78,10 +80,20 @@ Mais uma vez, qualquer dúvida maior pode nos perguntar, boa sorte!
 
 ## Projeto
 ### Tecnologias utilizadas: 
-- Java + SpringBoot
-- PostgreSQL
-- Docker
-- Docker Compose
+- [Spring Tool Suite]()
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Postman](https://www.getpostman.com/downloads/)
+- [Java](https://pt.wikipedia.org/wiki/Java_(linguagem_de_programa%C3%A7%C3%A3o))
+  - [Spring Boot](https://spring.io/projects/spring-boot)
+  - [Lombok](https://projectlombok.org/)
+  - [Flyway](https://flywaydb.org/)
+- [PostgreSQL](https://www.postgresql.org/)
+
+- [ReacJS]()
+- [Bootstrap]()
+- [Docker](https://www.docker.com/)
+  - [Docker Compose](https://docs.docker.com/compose/)
+- [AWS LightSail](https://aws.amazon.com/pt/lightsail/)
 
 ### Instruções
 - [Instalar Git](https://www.digitalocean.com/community/tutorials/como-instalar-o-git-no-ubuntu-18-04-pt)
@@ -99,13 +111,19 @@ Mais uma vez, qualquer dúvida maior pode nos perguntar, boa sorte!
 ### AWS
 - Acesso Deploy da aplicação na AWS [aqui](http://54.162.76.18/) *(em testes/desenvolvimento)
 
+### Melhorias
+ - Histórico
+
 ## Referencias
  - https://stackoverflow.com/questions/32074631/spring-boot-application-without-a-datasource
-
-
+ - https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#reference
+ - https://stackoverflow.com/questions/604424/how-to-get-an-enum-value-from-a-string-value-in-java/604426
 ## Autor
 [Rui Richard Blaese](https://www.linkedin.com/in/ruiblaese/)   
 ruiblaese@gmail.com
 
+:heavy_check_mark: 
+:x:
 
-[(volta para índice)](#índice)
+
+[(voltar)](#índice)

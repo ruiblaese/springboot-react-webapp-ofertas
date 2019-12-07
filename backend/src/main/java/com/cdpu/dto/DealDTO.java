@@ -38,7 +38,7 @@ public class DealDTO {
 	
 	@NotNull(message = "Informe um tipo")
 	@Pattern(regexp="^(LOCAL|PRODUTO|VIAGEM)$", message = "Para o tipo somente são aceitos os valores LOCAL, PRODUTO, VIAGEM")
-	private TypeDeal type;
+	private String type;
 	
 	private String url;
 	private Long totalSold;

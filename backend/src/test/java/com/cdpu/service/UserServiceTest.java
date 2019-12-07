@@ -23,19 +23,21 @@ import com.cdpu.repository.UserRepository;
 @SpringBootTest
 @ActiveProfiles("test")
 public class UserServiceTest {
-	
+
 	@MockBean
 	UserRepository repository;
-	
+
 	@Autowired
 	UserService service;
-	
+
 	@Before
 	public void setUp() {
-		BDDMockito.given(repository.findByEmailEquals(Mockito.anyString())).willReturn(Optional.of(new User()));
-		
+		BDDMockito
+			.given(repository.findByEmailEquals(Mockito.anyString()))
+			.willReturn(Optional.of(new User()));
+
 	}
-	
+
 	@Test
 	public void testFindByEmail() {
 		Optional<User> user = service.findByEmail("email@teste.com");
