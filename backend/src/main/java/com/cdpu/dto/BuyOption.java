@@ -14,6 +14,8 @@ import lombok.Data;
 public class BuyOption {
 
 	private Long id;
+	@NotNull(message = "Insira o id da oferta")
+	private Long deal;
 	
 	@NotNull(message = "Informe um titulo")
 	@Length(min = 5, message = "A titulo deve ter no mínimo 5 caracteres")
