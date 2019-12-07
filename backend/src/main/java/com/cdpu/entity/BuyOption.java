@@ -43,7 +43,7 @@ public class BuyOption  implements Serializable{/**
 	@Column(name = "quantity_cupom", nullable = false)
 	private Long quantityCupom;
 	
-	@Column(name = "total_sold", nullable = false)
+	@Column(name = "quantity_sold", nullable = false)
 	private Long quantitySold;
 	
 	@Column(name = "start_date", nullable = false)
