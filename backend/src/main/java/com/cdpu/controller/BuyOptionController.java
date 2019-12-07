@@ -41,10 +41,9 @@ public class BuyOptionController {
 	public ResponseEntity<Response<BuyOptionDTO>> create(@Valid @RequestBody BuyOptionDTO dto, BindingResult result) {
 	
 		Response<BuyOptionDTO> response = new Response<BuyOptionDTO>();
-		
-		
+				
 		if (dto.getDeal() != null) {
-			Optional<Deal> deal = serviceDeal.findById(dto.getId());
+			Optional<Deal> deal = serviceDeal.findById(dto.getDeal());
 			if (!deal.isPresent()) {
 				result.addError(new ObjectError("Deal", "Oferta não encontrada"));
 			}

@@ -18,7 +18,8 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "buy_option")
-public class BuyOption  implements Serializable{/**
+public class BuyOption  implements Serializable{
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 8330942088888211092L;
@@ -39,6 +40,9 @@ public class BuyOption  implements Serializable{/**
 	
 	@Column(name = "percentage_discount", nullable = false)	
 	private Double percentageDiscount;
+	
+	@Column(name = "sale_price", nullable = false)	
+	private Double salePrice;
 	
 	@Column(name = "quantity_cupom", nullable = false)
 	private Long quantityCupom;

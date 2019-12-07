@@ -47,11 +47,11 @@ public class DealControllerTest {
 	private static final Long ID = 1L;
 	private static final Date DATE = new Date();
 	private static final LocalDate TODAY = LocalDate.now();
-	private static final String TITLE = "";
-	private static final String TEXT = "";
-	private static final Long TOTAL_SOLD = 0L;
+	private static final String TITLE = "oferta teste";
+	private static final String TEXT = "texto oferta teste";
+	private static final Long TOTAL_SOLD = 1L;
 	private static final TypeDeal TYPE = TypeDeal.PRODUTO;
-	private static final String URL = "/item/1/";
+	private static final String URL = "link que escolhi";
 	
 	@MockBean
 	DealService service;

@@ -27,6 +27,9 @@ public class BuyOptionDTO {
 	@NotNull(message = "Informe o percentual de desconto")	
 	private Double percentageDiscount;
 	
+	@NotNull(message = "Informe o preço de venda")
+	private Double salePrice;
+	
 	@NotNull(message = "Informe a quantidade de cupons")	
 	private Long quantityCupom;
 	

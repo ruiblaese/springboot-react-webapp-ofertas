@@ -49,6 +49,7 @@ public class ConvertEntities {
 		dto.setEndDate(buyo.getEndDate());
 		dto.setNormalPrice(buyo.getNormalPrice());
 		dto.setPercentageDiscount(buyo.getPercentageDiscount());
+		dto.setSalePrice(buyo.getSalePrice());
 		dto.setQuantityCupom(buyo.getQuantityCupom());
 		dto.setQuantitySold(buyo.getQuantitySold());
 		dto.setTitle(buyo.getTitle());
@@ -66,8 +67,9 @@ public class ConvertEntities {
 		buyo.setDeal(deal);
 		buyo.setStartDate(dto.getStartDate());
 		buyo.setEndDate(dto.getEndDate());
-		buyo.setNormalPrice(dto.getNormalPrice());
+		buyo.setNormalPrice(dto.getNormalPrice());		
 		buyo.setPercentageDiscount(dto.getPercentageDiscount());
+		buyo.setSalePrice(dto.getSalePrice());
 		buyo.setQuantityCupom(dto.getQuantityCupom());
 		buyo.setQuantitySold(dto.getQuantitySold());
 		buyo.setTitle(dto.getTitle());
