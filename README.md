@@ -118,17 +118,18 @@ Mais uma vez, qualquer dúvida maior pode nos perguntar, boa sorte!
   - JWT 
   - Terminar cadastro de Usuário
   - Swagger
+  - Implementar paginação
 
 - Front-end
-  - Melhorar navegação da pagina(botões para voltar, organizar tudo melhor e mais bonito)
+  - Melhorar navegação da pagina(botões para voltar, organizar tudo e deixar bonito)
   - Terminar cadastro de Usuário
   - JWT (parcialmente implementado)
   - Implementar Testes
   - Implementar alteração e exclusão de Opção de Oferta
+  - Implementar paginação
  
 - Problemas para resolver
-  - Ao fazer deploy com docker-compose começou problema com a data
-  - Validar datas "iniciais" devem ser maior que datas "finais"
+  - Ao fazer deploy com docker-compose começou problema com a data  
   - Alterar para receber "Quantidade de Dias" de validade não uma data(requisito do desafio)
 
 
