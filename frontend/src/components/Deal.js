@@ -90,9 +90,6 @@ class Deal extends Component {
     }
     if (!dateValid(this.state.dealForm.publishDate)){
       msg += 'Preencha o campo Data Publicação corretamente no formato dd-mm-aaaa\n';
-    }
-    if (!dateValid(this.state.dealForm.endDate)){
-      msg += 'Preencha o campo data Final corretamente no formato dd-mm-aaaa\n';
     }    
 
     if (!msg) {
