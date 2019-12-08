@@ -17,6 +17,8 @@ public interface BuyOptionRepository extends JpaRepository<BuyOption, Long>{
 	
 	@Query(value = "select buyo from BuyOption buyo where (buyo.deal.id = :deal) and (buyo.startDate <= :init) and (buyo.endDate >= :end) and (buyo.quantitySold < buyo.quantityCupom)")
 	List<BuyOption> findAllByDealAndStartDateLessThanEqualAndEndDateGreaterThanEqualAndQuantitySoldLessThanQuantityCupomOrderById(@Param("deal")  Long deal, @Param("init") Date init, @Param("end") Date end);
+		
+	List<BuyOption> findAllByDealAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderById(Deal deal, Date init, Date end);
 	
 	List<BuyOption> findAllByDealIsNull(); 
 	

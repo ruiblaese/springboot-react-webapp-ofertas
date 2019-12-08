@@ -40,7 +40,9 @@ public class BuyOptionServiceImpl implements BuyOptionService {
 
 	@Override
 	public List<BuyOption> findAllActiveByDeal(Deal deal) { 
-		return repository.findAllByDealAndStartDateLessThanEqualAndEndDateGreaterThanEqualAndQuantitySoldLessThanQuantityCupomOrderById(deal.getId(),new Date(),new Date());
+		//return repository.findAllByDealAndStartDateLessThanEqualAndEndDateGreaterThanEqualAndQuantitySoldLessThanQuantityCupomOrderById(deal.getId(),new Date(),new Date());
+		return repository.findAllByDealAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderById(deal, new Date(),new Date());
+		
 	}
 
 	@Override

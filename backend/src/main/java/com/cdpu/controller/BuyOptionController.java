@@ -50,12 +50,16 @@ public class BuyOptionController {
 			}
 		}
 		
+		if (dto.getStartDate().after(dto.getEndDate())) {
+			result.addError(new ObjectError("Deal", "Data de inicio deve ser menor que data final"));
+		}				
+		
 		if (result.hasErrors()) {
 			result.getAllErrors().forEach(r -> response.getErrors().add(r.getDefaultMessage()));
 
 			return ResponseEntity.badRequest().body(response);
 		}
-		
+		dto.setSalePrice(dto.getNormalPrice() * ((100 - dto.getPercentageDiscount()) / 100));
 		dto.setQuantitySold(0L);
 		BuyOption buyo = service.save(ConvertEntities.convertBuyOptionDtoToBuyOption(dto));
 
@@ -83,6 +87,10 @@ public class BuyOptionController {
 			}
 		}
 		
+		if (dto.getStartDate().after(dto.getEndDate())) {
+			result.addError(new ObjectError("Deal", "Data de inicio deve ser menor que data final"));
+		}				
+		
 		if (result.hasErrors()) {
 			result.getAllErrors().forEach(r -> response.getErrors().add(r.getDefaultMessage()));
 
@@ -91,7 +99,8 @@ public class BuyOptionController {
 		
 		/* nao permite editar os campos abaixo */				
 		dto.setQuantitySold(buyoDb.get().getQuantitySold());		
-
+		dto.setSalePrice(dto.getNormalPrice() * ((100 - dto.getPercentageDiscount()) / 100));
+		
 		BuyOption buyo = service.save(ConvertEntities.convertBuyOptionDtoToBuyOption(dto));
 
 		response.setData(ConvertEntities.convertBuyOptionToBuyOptionDto(buyo));
@@ -146,6 +155,7 @@ public class BuyOptionController {
 	}		
 	@PostMapping(value = "/buy/{buyOptionId}")
 	public ResponseEntity<Response<String>> buyOption (@PathVariable("buyOptionId") Long buyOptionId){
+		
 		Response<String> response = new Response<String>();
 		
 		Optional<BuyOption> opBuyo = service.findById(buyOptionId);
@@ -159,15 +169,23 @@ public class BuyOptionController {
 			response.getErrors().add("Erro ao pegar Deal do BuyOption de id " + buyOptionId);
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
 		}
-		buyo.setQuantitySold(buyo.getQuantitySold() + 1);
-		service.save(buyo);
-		Deal deal = opDeal.get();
-		deal.setTotalSold(deal.getTotalSold() + 1);
-		serviceDeal.save(deal);
 		
-		return ResponseEntity.ok().body(response);
+		if (buyo.getQuantityCupom() > buyo.getQuantitySold()) {	
+		
+			buyo.setQuantitySold(buyo.getQuantitySold() + 1);
+			service.save(buyo);
+			Deal deal = opDeal.get();
+			deal.setTotalSold(deal.getTotalSold() + 1);
+			serviceDeal.save(deal);
+			
+			return ResponseEntity.ok().body(response);
+			
+		} else {
+			
+			response.getErrors().add("Quantidade de cupons esgotados.");
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+			
+		}
 		
 	}		
-				
-
 }

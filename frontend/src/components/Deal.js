@@ -130,6 +130,7 @@ class Deal extends Component {
         await optionsService.postOption(tmpBuyoForm);
       }
       await this.getListBuyo();
+      this.btnCancelarClickBuyo(event);
     } else {
       alert(msg);
     }
@@ -175,7 +176,7 @@ class Deal extends Component {
         ...this.state.buyoForm,
         [event.target.name]: event.target.value ? event.target.value : '',
       },
-    });
+    });    
   }
 
   render = () => (
@@ -376,6 +377,7 @@ class Deal extends Component {
                         id="inputSalePrice"
                         name="salePrice"
                         value={this.state.buyoForm.salePrice}
+                        disabled
                       />
                     </div>
                   </div>

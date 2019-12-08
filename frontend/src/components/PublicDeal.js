@@ -252,7 +252,8 @@ class Deal extends Component {
                                 type="button"
                                 value="Comprar"
                                 name="btnBuyOption"
-                                id="btnBuyOption"                            
+                                id="btnBuyOption"  
+                                disabled={(item.quantityCupom - item.quantitySold) <= 0}
                               />                        
                             </td>
                           </tr>

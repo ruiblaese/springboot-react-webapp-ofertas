@@ -42,6 +42,10 @@ public class DealController {
 		
 		Response<DealDTO> response = new Response<DealDTO>();
 		
+		if (dto.getPublishDate().after(dto.getEndDate())) {
+			result.addError(new ObjectError("Deal", "Data da publicação deve ser menor que data de validade"));
+		}		
+		
 		if (result.hasErrors()) {
 			System.out.println(result);
 			result.getAllErrors().forEach(e -> response.getErrors().add(e.getDefaultMessage()));
@@ -134,6 +138,10 @@ public class DealController {
 		if (!wi.isPresent()) {
 			result.addError(new ObjectError("Deal", "Oferta não encontrada"));
 		}		
+		
+		if (dto.getPublishDate().after(dto.getEndDate())) {
+			result.addError(new ObjectError("Deal", "Data da publicação deve ser menor que data de validade"));
+		}
 
 		if (result.hasErrors()) {
 			result.getAllErrors().forEach(r -> response.getErrors().add(r.getDefaultMessage()));
