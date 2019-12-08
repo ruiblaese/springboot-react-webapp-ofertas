@@ -13,11 +13,13 @@ services:
     image: nginx:1.13
     volumes:
       # Site
-      - ./frontend:/usr/share/nginx/html/
+      - ./frontend/build:/usr/share/nginx/html/
       # Configuração do proxy reverso
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
     ports:
       - 80:80
+    environment:
+      REACT_APP_API_BASE_URL: http://localhost/api/
     depends_on:
       - app
   app:

@@ -108,7 +108,7 @@ public class DealRepositoryTest {
 	
 	@Test
 	public void testFindActiveDeals() {
-		List<Deal> response = repository.findByPublishDateLessThanEqualAndEndDateGreaterThanEqual(DATE,DATE);
+		List<Deal> response = repository.findByPublishDateLessThanEqualAndEndDateGreaterThanEqualOrderById(DATE,DATE);
 
 		assertEquals(response.size(), 2);
 	}

@@ -5,7 +5,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-import javax.swing.text.html.Option;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,9 +21,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cdpu.dto.BuyOptionDTO;
+
 import com.cdpu.dto.DealDTO;
-import com.cdpu.entity.BuyOption;
 import com.cdpu.entity.Deal;
 import com.cdpu.response.Response;
 import com.cdpu.service.DealService;

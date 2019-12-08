@@ -94,25 +94,24 @@ Mais uma vez, qualquer dúvida maior pode nos perguntar, boa sorte!
 - [Docker](https://www.docker.com/)
   - [Docker Compose](https://docs.docker.com/compose/)
 - [AWS LightSail](https://aws.amazon.com/pt/lightsail/)
+- [nginx](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/)
+  - [nginx reverse](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/)
 
 ### Instruções
 - [Instalar Git](https://www.digitalocean.com/community/tutorials/como-instalar-o-git-no-ubuntu-18-04-pt)
 - [Instalar Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 - [Instalar Docker-Compose](https://docs.docker.com/compose/install/)
 - [Instalar Java 8 \ OpenJDK 8 \ Amazon Correto 8](https://docs.aws.amazon.com/pt_br/corretto/latest/corretto-8-ug/generic-linux-install.html)
+- Instalar NodeJs
+- Instalar Yarn
 - git clone
-- compilar/gerar .jar 
-`cd cdpu && cd backend && ./mvnw install`
-- gerar imagem docker
-`make build-docker-images`
-- subir projeto com docker-compose
-`docker-compose up -d`
+- executar Makefile para fazer build e subir docker-compose
+`make run-docker-compose`
 
 ### AWS
 - Acesso Deploy da aplicação na AWS [aqui](http://34.224.132.153/)
 
 ### Melhorias
-
 - Back-end    
   - Implementar mais testes
   - Implementar mais validações
@@ -126,6 +125,11 @@ Mais uma vez, qualquer dúvida maior pode nos perguntar, boa sorte!
   - JWT (parcialmente implementado)
   - Implementar Testes
   - Implementar alteração e exclusão de Opção de Oferta
+ 
+- Problemas para resolver
+  - Ao fazer deploy com docker-compose começou problema com a data
+  - Validar datas "iniciais" devem ser maior que datas "finais"
+  - Alterar para receber "Quantidade de Dias" de validade não uma data(requisito do desafio)
 
 
 
