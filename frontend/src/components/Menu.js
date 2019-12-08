@@ -24,6 +24,11 @@ const getClassNameForActivePage = (props, pageName) => {
       String(props.location.pathname).indexOf('/deal') === 0
     ) {
       return 'nav-item active';
+    }else if (
+      pageName === 'ofertas' &&
+      String(props.location.pathname).indexOf('/ofertas') === 0
+    ) {
+      return 'nav-item active';
     }
   }
   return 'nav-item';

@@ -11,7 +11,7 @@ import com.cdpu.util.enums.TypeDeal;
 
 public interface DealRepository extends JpaRepository<Deal, Long> {
 	
-	List<Deal> findByPublishDateLessThanEqualAndEndDateGreaterThanEqual(Date init, Date end);
+	List<Deal> findByPublishDateLessThanEqualAndEndDateGreaterThanEqualOrderById(Date init, Date end);
 	
 	List<Deal> findByPublishDateLessThanEqualAndEndDateGreaterThanEqualAndType(Date init, Date end, TypeDeal type);
 	

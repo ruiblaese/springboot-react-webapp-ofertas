@@ -16,7 +16,7 @@ public interface BuyOptionService {
 	
 	List<BuyOption> findAllByDeal(Deal deal);
 	
-	List<BuyOption> findAllActiveByDeal(Long deal);
+	List<BuyOption> findAllActiveByDeal(Deal deal);
 	
 	List<BuyOption> findAllBuyOptionIsNull();
 

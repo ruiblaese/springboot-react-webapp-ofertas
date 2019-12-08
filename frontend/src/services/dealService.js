@@ -8,6 +8,13 @@ async function getDeals() {
   return data;
 }
 
+async function getActiveDeals() {
+  const {data} = await http.get(`${GET_DEALS_ENDPOINT}/active/`);
+
+  return data;
+}
+
+
 async function getDealById(id) {
   const {data} = await http.get(`${GET_DEALS_ENDPOINT}/${id}`);
 
@@ -23,10 +30,10 @@ async function putDeal(deal) {
   return data;
 }
 
-async function postDeal(deal) {
+async function postDeal(deal) {  
   const {data} = await http.post(GET_DEALS_ENDPOINT, deal);
-
-  return data;
+  
+  return data;    
 }
 
 async function deleteDeal(id) {
@@ -41,4 +48,5 @@ export default {
   putDeal,
   postDeal,
   deleteDeal,
+  getActiveDeals,
 };

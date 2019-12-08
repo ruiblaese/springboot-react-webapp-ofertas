@@ -109,15 +109,24 @@ Mais uma vez, qualquer dúvida maior pode nos perguntar, boa sorte!
 `docker-compose up -d`
 
 ### AWS
-- Acesso Deploy da aplicação na AWS [aqui](http://54.162.76.18/) *(em testes/desenvolvimento)
+- Acesso Deploy da aplicação na AWS [aqui](http://34.224.132.153/)
 
 ### Melhorias
 
-- Back-end
-  - JWT  
+- Back-end    
+  - Implementar mais testes
+  - Implementar mais validações
+  - JWT 
+  - Terminar cadastro de Usuário
+  - Swagger
 
 - Front-end
+  - Melhorar navegação da pagina(botões para voltar, organizar tudo melhor e mais bonito)
+  - Terminar cadastro de Usuário
   - JWT (parcialmente implementado)
+  - Implementar Testes
+  - Implementar alteração e exclusão de Opção de Oferta
+
 
 
 ## Referencias

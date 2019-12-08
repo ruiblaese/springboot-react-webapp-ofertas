@@ -59,18 +59,19 @@ class Deals extends Component {
         <br />
         <div className="row">
           {this.state.listDeals ? (
-            <table className="table table-hover">
+            <table className="table table-hover table-sm">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Titulo</th>
-                  <th scope="col">Texto</th>
-                  <th scope="col">Cadastro</th>
-                  <th scope="col">Pub. Inicio</th>
-                  <th scope="col">Pub. Final</th>
-                  <th scope="col">Qtde Vendida</th>
-                  <th scope="col"></th>
-                  <th scope="col"></th>
+                  <th>#</th>
+                  <th>Tipo</th>
+                  <th>Titulo</th>
+                  <th>Texto</th>
+                  <th>Cadastro</th>
+                  <th>Pub. Inicio</th>
+                  <th>Pub. Final</th>
+                  <th>Qtde Vendida</th>
+                  <th></th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -78,11 +79,12 @@ class Deals extends Component {
                   ? this.state.listDeals.map((item, index) => (
                       <tr key={item.id}>
                         <th scope="row">{item.id}</th>
+                        <td>{item.type}</td>
                         <td>{item.title}</td>
                         <td>{item.text}</td>                        
                         <td>{dayjs(item.createDate).format('DD-MM-YYYY')}</td>
-                        <td>{dayjs(item.publishDate).format('DD-MM-YYYY')}</td>
-                        <td>{dayjs(item.endDate).format('DD-MM-YYYY')}</td>
+                        <td>{item.publishDate}</td>
+                        <td>{item.endDate}</td>
                         <td>{item.totalSold}</td>  
                         <td>
                           <input
@@ -104,7 +106,7 @@ class Deals extends Component {
                             value="Excluir"
                             name="btnDelete"
                             id="btnDelete"
-                            disabled // TODO desenvolver exclusao
+                            //disabled // TODO desenvolver exclusao
                           />
                         </td>
                       </tr>

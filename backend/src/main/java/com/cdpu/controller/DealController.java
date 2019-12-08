@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -48,8 +49,9 @@ public class DealController {
 			result.getAllErrors().forEach(e -> response.getErrors().add(e.getDefaultMessage()));
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
 		}
-		
+		System.out.println(dto);		
 		Deal dealInsert = ConvertEntities.convertDealDtoToDeal(dto);
+		System.out.println(dealInsert);
 		dealInsert.setCreateDate(new Date());
 		dealInsert.setTotalSold(0L);
 		
@@ -57,6 +59,7 @@ public class DealController {
 		deal.setUrl("/oferta/" + String.valueOf(deal.getId()));
 		deal = service.save(deal);
 		
+		System.out.println(ConvertEntities.convertDealToDealDto(deal));		
 		response.setData(ConvertEntities.convertDealToDealDto(deal));
 		
 		
@@ -147,6 +150,22 @@ public class DealController {
 		Deal saved = service.save(ConvertEntities.convertDealDtoToDeal(dto));		
 
 		response.setData(ConvertEntities.convertDealToDealDto(saved));
+		return ResponseEntity.ok().body(response);
+	}
+	
+	@DeleteMapping(value = "/{dealId}")
+	public ResponseEntity<Response<String>> delete(@PathVariable("dealId") Long dealId) {
+		Response<String> response = new Response<String>();
+
+		Optional<Deal> wi = service.findById(dealId);
+
+		if (!wi.isPresent()) {
+			response.getErrors().add("Deal de id " + dealId + " não encontrada");
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+		}
+		
+		service.deleteById(dealId);
+		response.setData("Deal de id "+ dealId + " apagada com sucesso");
 		return ResponseEntity.ok().body(response);
 	}
 		

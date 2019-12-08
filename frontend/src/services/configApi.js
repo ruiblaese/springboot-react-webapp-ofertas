@@ -11,7 +11,7 @@ export const GET_USERS_ENDPOINT = BASE_URL +'user';
 export const GET_DEALS_ENDPOINT = BASE_URL +'deal';
 
 //Opcao de oferta
-export const GET_BUY_OPTIONS_ENDPOINT = BASE_URL + 'buy-option';
+export const GET_BUY_OPTIONS_ENDPOINT = BASE_URL + 'option';
 
 export default {
   SIGNUP_ENDPOINT,

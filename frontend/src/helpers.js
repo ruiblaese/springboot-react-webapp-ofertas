@@ -16,4 +16,9 @@ const slugify = str =>
     .replace(/--+/g, '-')
     .trim();
 
-export {slugify, localStorageWrapper};
+const dateValid = (date) => {
+  var patternData = /^[0-9]{2}-[0-9]{2}-[0-9]{4}$/;
+  return patternData.test(date)
+}
+
+export {slugify, localStorageWrapper, dateValid};

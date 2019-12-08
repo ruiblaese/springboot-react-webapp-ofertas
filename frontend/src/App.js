@@ -18,6 +18,10 @@ import User from './components/User';
 import Deals from './components/Deals';
 import Deal from './components/Deal';
 
+//Ofertas Publicas para usuarios
+import PublicDeals from './components/PublicDeals';
+import PublicDeal from './components/PublicDeal';
+
 import './App.css';
 
 const HomeRoute = props => {
@@ -58,6 +62,22 @@ const dealRoute = props => {
     return null;
   }
   return <Deal />;
+};
+
+const publicDealsRoute = props => {
+  if (!login.isLogged()) {
+    props.history.push('/login');
+    return null;
+  }
+  return <PublicDeals />;
+};
+
+const publicDealRoute = props => {
+  if (!login.isLogged()) {
+    props.history.push('/login');
+    return null;
+  }
+  return <PublicDeal />;
 };
 
 const LoginRoute = props => {
@@ -106,6 +126,11 @@ class App extends Component {
         <Route exact path="/deals" component={dealsRoute} />
         <Route exact path="/deal" component={dealRoute} />
         <Route exact path="/deal/:id" component={dealRoute} />
+
+        {/* Oferta */}
+        <Route exact path="/ofertas" component={publicDealsRoute} />
+        <Route exact path="/oferta" component={publicDealRoute} />
+        <Route exact path="/oferta/:id" component={publicDealRoute} />        
 
       </div>
     );
