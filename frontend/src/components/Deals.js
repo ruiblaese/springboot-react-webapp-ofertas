@@ -67,8 +67,8 @@ class Deals extends Component {
                   <th>Titulo</th>
                   <th>Texto</th>
                   <th>Cadastro</th>
-                  <th>Pub. Inicio</th>
-                  <th>Pub. Final</th>
+                  <th>Publicação</th>
+                  <th>Validade</th>
                   <th>Qtde Vendida</th>
                   <th></th>
                   <th></th>

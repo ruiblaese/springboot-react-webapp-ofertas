@@ -130,7 +130,6 @@ Mais uma vez, qualquer dúvida maior pode nos perguntar, boa sorte!
  
 - Problemas para resolver
   - Ao fazer deploy com docker-compose começou problema com a data  
-  - Alterar para receber "Quantidade de Dias" de validade não uma data(requisito do desafio)
 
 
 

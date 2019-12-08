@@ -17,7 +17,8 @@ class Deal extends Component {
       dealForm: {
         id: 0,
         title: '',
-        text: ''
+        text: '',
+        validity: 0
       },
       buyoForm: {
         id: 0,
@@ -245,7 +246,7 @@ class Deal extends Component {
             </select>
           </div>
           <div className="input-group">
-            <div className="form-group col-sm-6">
+            <div className="form-group col-sm-4">
               <label htmlFor="inputPublishDate">Data Publicação</label>
               <input
                 type="text"
@@ -259,8 +260,22 @@ class Deal extends Component {
                 value={this.state.dealForm.publishDate}
               />
             </div>
-            <div className="form-group col-sm-6">
-              <label htmlFor="inputEndDate">Data Final</label>
+            <div className="form-group col-sm-4">
+              <label htmlFor="inputValidity">Validade(em dias)</label>
+              <input
+                type="number"
+                className="form-control"
+                placeholder="00-00-0000"
+                onChange={e => {
+                  this.handleOnChange(e);
+                }}
+                id="inputValidity"
+                name="validity"
+                value={this.state.dealForm.validity}
+              />
+            </div>
+            <div className="form-group col-sm-4">
+              <label htmlFor="inputEndDate">Validade</label>
               <input
                 type="text"
                 className="form-control"
@@ -271,6 +286,7 @@ class Deal extends Component {
                 id="inputEndDate"
                 name="endDate"
                 value={this.state.dealForm.endDate}
+                disabled
               />
             </div>
           </div>

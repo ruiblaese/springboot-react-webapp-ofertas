@@ -1,5 +1,7 @@
 package com.cdpu.controller;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -42,28 +44,21 @@ public class DealController {
 		
 		Response<DealDTO> response = new Response<DealDTO>();
 		
-		if (dto.getPublishDate().after(dto.getEndDate())) {
-			result.addError(new ObjectError("Deal", "Data da publicação deve ser menor que data de validade"));
-		}		
-		
 		if (result.hasErrors()) {
 			System.out.println(result);
 			result.getAllErrors().forEach(e -> response.getErrors().add(e.getDefaultMessage()));
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
 		}
-		System.out.println(dto);		
-		Deal dealInsert = ConvertEntities.convertDealDtoToDeal(dto);
-		System.out.println(dealInsert);
+				
+		Deal dealInsert = ConvertEntities.convertDealDtoToDeal(dto);		
 		dealInsert.setCreateDate(new Date());
-		dealInsert.setTotalSold(0L);
+		dealInsert.setTotalSold(0L);		
 		
 		Deal deal = service.save(dealInsert);		
 		deal.setUrl("/oferta/" + String.valueOf(deal.getId()));
-		deal = service.save(deal);
-		
-		System.out.println(ConvertEntities.convertDealToDealDto(deal));		
-		response.setData(ConvertEntities.convertDealToDealDto(deal));
-		
+		deal = service.save(deal);		
+				
+		response.setData(ConvertEntities.convertDealToDealDto(deal));		
 		
 		return ResponseEntity.status(HttpStatus.CREATED).body(response);		
 	}
@@ -138,10 +133,6 @@ public class DealController {
 		if (!wi.isPresent()) {
 			result.addError(new ObjectError("Deal", "Oferta não encontrada"));
 		}		
-		
-		if (dto.getPublishDate().after(dto.getEndDate())) {
-			result.addError(new ObjectError("Deal", "Data da publicação deve ser menor que data de validade"));
-		}
 
 		if (result.hasErrors()) {
 			result.getAllErrors().forEach(r -> response.getErrors().add(r.getDefaultMessage()));

@@ -3,6 +3,7 @@ package com.cdpu.dto;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
@@ -30,18 +31,21 @@ public class DealDTO {
 	@NotNull(message = "Informe a data de publicação")
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy", locale = "pt-BR", timezone = "Brazil/East")
 	private Date publishDate;
-	
-	@NotNull(message = "Informe a data validade da oferta")
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy", locale = "pt-BR", timezone = "Brazil/East")	
-	@Column(nullable = false)
-	private Date endDate;	
-	
+		
 	@NotNull(message = "Informe um tipo")
 	@Pattern(regexp="^(LOCAL|PRODUTO|VIAGEM)$", message = "Para o tipo somente são aceitos os valores LOCAL, PRODUTO, VIAGEM")
 	private String type;
 	
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy", locale = "pt-BR", timezone = "Brazil/East")	
+	private Date endDate;	
+	
+	@DecimalMin(value = "0", inclusive = true, message = "Validade minima é 0 dias(0 = um dia)")
+	@NotNull(message = "Informe a validade da oferta")
+	private Long validity;
+	
 	private String url;
 	private Long totalSold;
 	private Date createDate;
+	
 	
 }

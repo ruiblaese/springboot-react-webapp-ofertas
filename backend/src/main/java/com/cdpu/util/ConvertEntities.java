@@ -1,5 +1,9 @@
 package com.cdpu.util;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
+
 import com.cdpu.dto.BuyOptionDTO;
 import com.cdpu.dto.DealDTO;
 import com.cdpu.dto.UserDTO;
@@ -23,14 +27,17 @@ public class ConvertEntities {
 		dto.setType(deal.getType().name());
 		dto.setUrl(deal.getUrl());
 		
+		long diff = deal.getEndDate().getTime() - deal.getPublishDate().getTime();
+		long diffDays = diff / (24 * 60 * 60 * 1000);
+		dto.setValidity(diffDays);
+		
 		return dto;
 	}
 	
 	public static Deal convertDealDtoToDeal(DealDTO dto) {
 		
 		Deal deal = new  Deal();
-		deal.setCreateDate(dto.getCreateDate());
-		deal.setEndDate(dto.getEndDate());
+		deal.setCreateDate(dto.getCreateDate());		
 		deal.setId(dto.getId());
 		deal.setPublishDate(dto.getPublishDate());
 		deal.setText(dto.getText());
@@ -38,6 +45,10 @@ public class ConvertEntities {
 		deal.setTotalSold(dto.getTotalSold());
 		deal.setType(TypeDeal.valueOf(dto.getType()));
 		deal.setUrl(dto.getUrl());
+		
+		LocalDateTime localDateTime = dto.getPublishDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();		
+		Date dateIncremented = Date.from(localDateTime.plusDays(dto.getValidity()).atZone(ZoneId.systemDefault()).toInstant());		
+		deal.setEndDate(dateIncremented);
 		
 		return deal;
 	}

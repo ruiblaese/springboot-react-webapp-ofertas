@@ -166,7 +166,7 @@ class Deal extends Component {
               />
             </div>
             <div className="form-group col-sm-6">
-              <label htmlFor="inputEndDate">Data Final</label>
+              <label htmlFor="inputEndDate">Validade</label>
               <input
                 type="text"
                 className="form-control"
