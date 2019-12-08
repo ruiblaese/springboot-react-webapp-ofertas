@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.cdpu.entity.BuyOption;
+import com.cdpu.entity.Deal;
 
 public interface BuyOptionService {
 	
@@ -13,9 +14,9 @@ public interface BuyOptionService {
 	
 	List<BuyOption> findAll();
 	
-	List<BuyOption> findAllByDeal(Long deal);
+	List<BuyOption> findAllByDeal(Deal deal);
 	
-	List<BuyOption> findAllActiveByDeal(Long deal);
+	List<BuyOption> findAllActiveByDeal(Deal deal);
 	
 	List<BuyOption> findAllBuyOptionIsNull();
 

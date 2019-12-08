@@ -18,5 +18,6 @@ public interface DealService {
 	
 	List<Deal> findAllActiveByType(TypeDeal type);
 	
+	void deleteById(Long id);
 	
 }

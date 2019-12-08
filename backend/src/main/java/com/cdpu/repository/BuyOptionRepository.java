@@ -8,14 +8,15 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.cdpu.entity.BuyOption;
+import com.cdpu.entity.Deal;
 
 public interface BuyOptionRepository extends JpaRepository<BuyOption, Long>{
 	
-	List<BuyOption> findAllByDeal(Long deal);
+	List<BuyOption> findAllByDealOrderById(Deal deal);
 	
 	
-	@Query(value = "select buyo from BuyOption buyo where (buyo.deal.id = :deal) and (buyo.startDate <= :init) and (buyo.endDate >= :end) and (buyo.quantityCupom <= buyo.quantitySold)")
-	List<BuyOption> findAllByDealAndStartDateLessThanEqualAndEndDateGreaterThanEqualAndQuantityCupomLessThanQuantitySold(@Param("deal")  Long deal, @Param("init") Date init, @Param("end") Date end);
+	@Query(value = "select buyo from BuyOption buyo where (buyo.deal.id = :deal) and (buyo.startDate <= :init) and (buyo.endDate >= :end) and (buyo.quantitySold < buyo.quantityCupom)")
+	List<BuyOption> findAllByDealAndStartDateLessThanEqualAndEndDateGreaterThanEqualAndQuantitySoldLessThanQuantityCupomOrderById(@Param("deal")  Long deal, @Param("init") Date init, @Param("end") Date end);
 	
 	List<BuyOption> findAllByDealIsNull(); 
 	

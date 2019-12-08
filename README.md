@@ -109,15 +109,31 @@ Mais uma vez, qualquer dúvida maior pode nos perguntar, boa sorte!
 `docker-compose up -d`
 
 ### AWS
-- Acesso Deploy da aplicação na AWS [aqui](http://54.162.76.18/) *(em testes/desenvolvimento)
+- Acesso Deploy da aplicação na AWS [aqui](http://34.224.132.153/)
 
 ### Melhorias
- - Histórico
+
+- Back-end    
+  - Implementar mais testes
+  - Implementar mais validações
+  - JWT 
+  - Terminar cadastro de Usuário
+  - Swagger
+
+- Front-end
+  - Melhorar navegação da pagina(botões para voltar, organizar tudo melhor e mais bonito)
+  - Terminar cadastro de Usuário
+  - JWT (parcialmente implementado)
+  - Implementar Testes
+  - Implementar alteração e exclusão de Opção de Oferta
+
+
 
 ## Referencias
  - https://stackoverflow.com/questions/32074631/spring-boot-application-without-a-datasource
  - https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#reference
  - https://stackoverflow.com/questions/604424/how-to-get-an-enum-value-from-a-string-value-in-java/604426
+ - https://www.devdiaries.net/blog/Spring-Boot-2-PostgreSQL-JWT-React-Part-3/#websecurityconfigureradapter-configuration
 ## Autor
 [Rui Richard Blaese](https://www.linkedin.com/in/ruiblaese/)   
 ruiblaese@gmail.com

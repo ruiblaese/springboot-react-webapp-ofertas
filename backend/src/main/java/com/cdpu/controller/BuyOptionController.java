@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,7 +29,7 @@ import com.cdpu.service.DealService;
 import com.cdpu.util.ConvertEntities;
 
 @RestController
-@RequestMapping("buy-option")
+@RequestMapping("option")
 public class BuyOptionController {
 	
 	@Autowired
@@ -54,7 +55,8 @@ public class BuyOptionController {
 
 			return ResponseEntity.badRequest().body(response);
 		}
-
+		
+		dto.setQuantitySold(0L);
 		BuyOption buyo = service.save(ConvertEntities.convertBuyOptionDtoToBuyOption(dto));
 
 		response.setData(ConvertEntities.convertBuyOptionToBuyOptionDto(buyo));
@@ -111,5 +113,61 @@ public class BuyOptionController {
 		return ResponseEntity.ok().body(response);
 		
 	}	
+	
+	@GetMapping(value = "/deal/{dealId}")
+	public ResponseEntity<Response<List<BuyOptionDTO>>> findAllByDeal(@PathVariable("dealId") Long dealId){
+		Deal deal = new Deal();
+		deal.setId(dealId);
+		ArrayList<BuyOption> list = (ArrayList<BuyOption>) service.findAllByDeal(deal);
+		
+		List<BuyOptionDTO> dto = new ArrayList<>();
+		list.forEach(i -> dto.add(ConvertEntities.convertBuyOptionToBuyOptionDto(i)));
+		
+		Response<List<BuyOptionDTO>> response = new Response<List<BuyOptionDTO>>();
+		response.setData(dto);		
+		
+		return ResponseEntity.ok().body(response);
+		
+	}	
+	@GetMapping(value = "/active/deal/{dealId}")
+	public ResponseEntity<Response<List<BuyOptionDTO>>> findAllActiveByDeal(@PathVariable("dealId") Long dealId){
+		Deal deal = new Deal();
+		deal.setId(dealId);
+		ArrayList<BuyOption> list = (ArrayList<BuyOption>) service.findAllActiveByDeal(deal);
+		
+		List<BuyOptionDTO> dto = new ArrayList<>();
+		list.forEach(i -> dto.add(ConvertEntities.convertBuyOptionToBuyOptionDto(i)));
+		
+		Response<List<BuyOptionDTO>> response = new Response<List<BuyOptionDTO>>();
+		response.setData(dto);		
+		
+		return ResponseEntity.ok().body(response);
+		
+	}		
+	@PostMapping(value = "/buy/{buyOptionId}")
+	public ResponseEntity<Response<String>> buyOption (@PathVariable("buyOptionId") Long buyOptionId){
+		Response<String> response = new Response<String>();
+		
+		Optional<BuyOption> opBuyo = service.findById(buyOptionId);
+		if (!opBuyo.isPresent()) {
+			response.getErrors().add("BuyOption de id " + buyOptionId + " não encontrada");
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+		}
+		BuyOption buyo = opBuyo.get();		
+		Optional<Deal> opDeal = serviceDeal.findById(buyo.getDeal().getId());
+		if (!opDeal.isPresent()) {
+			response.getErrors().add("Erro ao pegar Deal do BuyOption de id " + buyOptionId);
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+		}
+		buyo.setQuantitySold(buyo.getQuantitySold() + 1);
+		service.save(buyo);
+		Deal deal = opDeal.get();
+		deal.setTotalSold(deal.getTotalSold() + 1);
+		serviceDeal.save(deal);
+		
+		return ResponseEntity.ok().body(response);
+		
+	}		
+				
 
 }

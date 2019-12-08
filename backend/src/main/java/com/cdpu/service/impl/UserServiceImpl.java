@@ -1,5 +1,6 @@
 package com.cdpu.service.impl;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,11 @@ public class UserServiceImpl implements UserService{
 	public Optional<User> findByEmail(String email) {
 
 		return repository.findByEmailEquals(email);
+	}
+
+	@Override
+	public List<User> findAll() {
+		return repository.findAll();
 	}
 
 }

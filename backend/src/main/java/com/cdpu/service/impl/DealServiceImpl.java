@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.cdpu.entity.Deal;
@@ -31,13 +32,13 @@ public class DealServiceImpl implements DealService{
 
 	@Override
 	public List<Deal> findAll() {
-		return repository.findAll();
+		return repository.findAll(Sort.by(Sort.Direction.ASC, "id"));
 	}
 	
 	@Override
 	public List<Deal> findAllActive() {
 
-		return repository.findByPublishDateLessThanEqualAndEndDateGreaterThanEqual(new Date(), new Date());				
+		return repository.findByPublishDateLessThanEqualAndEndDateGreaterThanEqualOrderById(new Date(), new Date());				
 	}
 
 
@@ -45,6 +46,11 @@ public class DealServiceImpl implements DealService{
 	public List<Deal> findAllActiveByType(TypeDeal type) {		
 		return repository.findByPublishDateLessThanEqualAndEndDateGreaterThanEqualAndType(
 				new Date(), new Date(), type);
+	}
+
+	@Override
+	public void deleteById(Long id) {
+		repository.deleteById(id);		
 	}
 
 
