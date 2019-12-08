@@ -2,8 +2,10 @@ package com.cdpu.util;
 
 import com.cdpu.dto.BuyOptionDTO;
 import com.cdpu.dto.DealDTO;
+import com.cdpu.dto.UserDTO;
 import com.cdpu.entity.BuyOption;
 import com.cdpu.entity.Deal;
+import com.cdpu.entity.User;
 import com.cdpu.util.enums.TypeDeal;
 
 public class ConvertEntities {
@@ -76,5 +78,26 @@ public class ConvertEntities {
 		
 		return buyo;		
 	}	
+	
+	public static UserDTO convertUserToUserDto(User user) {
+		
+		UserDTO dto= new UserDTO();		
+		dto.setId(user.getId());		
+		dto.setEmail(user.getEmail());
+		dto.setName(user.getName());		
+		
+		
+		return dto;
+	}
+	
+	public static User convertUserDtoToUser(UserDTO dto) {
+		
+		User user = new User();		
+		user.setId(dto.getId());		
+		user.setEmail(dto.getEmail());
+		user.setName(dto.getName());
+		
+		return user;
+	}
 
 }

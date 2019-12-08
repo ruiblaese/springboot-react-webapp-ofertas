@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cdpu.entity.BuyOption;
+import com.cdpu.entity.Deal;
 import com.cdpu.repository.BuyOptionRepository;
 import com.cdpu.service.BuyOptionService;
 
@@ -33,7 +34,7 @@ public class BuyOptionServiceImpl implements BuyOptionService {
 	}
 
 	@Override
-	public List<BuyOption> findAllByDeal(Long deal) {
+	public List<BuyOption> findAllByDeal(Deal deal) {
 		return repository.findAllByDeal(deal);
 	}
 

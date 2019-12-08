@@ -112,12 +112,19 @@ Mais uma vez, qualquer dúvida maior pode nos perguntar, boa sorte!
 - Acesso Deploy da aplicação na AWS [aqui](http://54.162.76.18/) *(em testes/desenvolvimento)
 
 ### Melhorias
- - Histórico
+
+- Back-end
+  - JWT  
+
+- Front-end
+  - JWT (parcialmente implementado)
+
 
 ## Referencias
  - https://stackoverflow.com/questions/32074631/spring-boot-application-without-a-datasource
  - https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#reference
  - https://stackoverflow.com/questions/604424/how-to-get-an-enum-value-from-a-string-value-in-java/604426
+ - https://www.devdiaries.net/blog/Spring-Boot-2-PostgreSQL-JWT-React-Part-3/#websecurityconfigureradapter-configuration
 ## Autor
 [Rui Richard Blaese](https://www.linkedin.com/in/ruiblaese/)   
 ruiblaese@gmail.com

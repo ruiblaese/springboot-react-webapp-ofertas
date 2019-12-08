@@ -8,10 +8,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.cdpu.entity.BuyOption;
+import com.cdpu.entity.Deal;
 
 public interface BuyOptionRepository extends JpaRepository<BuyOption, Long>{
 	
-	List<BuyOption> findAllByDeal(Long deal);
+	List<BuyOption> findAllByDeal(Deal deal);
 	
 	
 	@Query(value = "select buyo from BuyOption buyo where (buyo.deal.id = :deal) and (buyo.startDate <= :init) and (buyo.endDate >= :end) and (buyo.quantityCupom <= buyo.quantitySold)")

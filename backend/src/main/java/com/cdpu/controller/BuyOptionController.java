@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -54,7 +55,8 @@ public class BuyOptionController {
 
 			return ResponseEntity.badRequest().body(response);
 		}
-
+		
+		dto.setQuantitySold(0L);
 		BuyOption buyo = service.save(ConvertEntities.convertBuyOptionDtoToBuyOption(dto));
 
 		response.setData(ConvertEntities.convertBuyOptionToBuyOptionDto(buyo));
@@ -111,5 +113,22 @@ public class BuyOptionController {
 		return ResponseEntity.ok().body(response);
 		
 	}	
+	
+	@GetMapping(value = "/deal/{dealId}")
+	public ResponseEntity<Response<List<BuyOptionDTO>>> findAllByDeal(@PathVariable("dealId") Long dealId){
+		Deal deal = new Deal();
+		deal.setId(dealId);
+		ArrayList<BuyOption> list = (ArrayList<BuyOption>) service.findAllByDeal(deal);
+		
+		List<BuyOptionDTO> dto = new ArrayList<>();
+		list.forEach(i -> dto.add(ConvertEntities.convertBuyOptionToBuyOptionDto(i)));
+		
+		Response<List<BuyOptionDTO>> response = new Response<List<BuyOptionDTO>>();
+		response.setData(dto);		
+		
+		return ResponseEntity.ok().body(response);
+		
+	}		
+				
 
 }
