@@ -108,8 +108,11 @@ Mais uma vez, qualquer dúvida maior pode nos perguntar, boa sorte!
 - executar Makefile para fazer build e subir docker-compose
 `make run-docker-compose`
 
+#### Dicas
+Para cadastrar um opção de oferta deve se cadastrar uma Oferta(Deal), em sequencia editar: na edição vai ser liberado formulario para cadastro de Opção(buyOption).
+
 ### AWS
-- Acesso Deploy da aplicação na AWS [aqui](http://34.224.132.153/) **Estou com problema no Deploy, frontend foi, api reversa parece estar funcionando de fora mas frontend ao requisitar api gera um erro.
+- Acesso Deploy da aplicação na AWS [aqui: http://34.224.132.153/](http://34.224.132.153/)
 
 ### Melhorias
 - Back-end    
@@ -118,9 +121,11 @@ Mais uma vez, qualquer dúvida maior pode nos perguntar, boa sorte!
   - JWT 
   - Terminar cadastro de Usuário
   - Swagger
-  - Implementar paginação
+  - Implementar paginação  
 
 - Front-end
+  - Edição da Opção de Oferta(buyDeal)
+  - Exclusão da Opção de Oferta(buyDeal)
   - Melhorar navegação da pagina(botões para voltar, organizar tudo e deixar bonito)
   - Terminar cadastro de Usuário
   - JWT (parcialmente implementado)
@@ -129,7 +134,8 @@ Mais uma vez, qualquer dúvida maior pode nos perguntar, boa sorte!
   - Implementar paginação
  
 - Problemas para resolver
-  - Ao fazer deploy com docker-compose começou problema com a data  
+  - Problema com data, ao fazer deploy com docker-compose começou problema com a data, cadastra ("data" -1 dia)
+  - Corrigir exclusão da Oferta(deal) quando já tem Opção(buyDeal)
 
 
 
