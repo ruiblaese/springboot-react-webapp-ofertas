@@ -105,11 +105,12 @@ Mais uma vez, qualquer dúvida maior pode nos perguntar, boa sorte!
 - Instalar NodeJs
 - Instalar Yarn
 - git clone
+- criar seu .env para frontend `cd frontend & cp .env.example .env` alterar variavel
 - executar Makefile para fazer build e subir docker-compose
 `make run-docker-compose`
 
 #### Dicas
-Para cadastrar um opção de oferta deve se cadastrar uma Oferta(Deal), em sequencia editar: na edição vai ser liberado formulario para cadastro de Opção(buyOption).
+*Para cadastrar um Opção de Oferta(buyOption) deve se cadastrar uma Oferta(Deal), em sequencia editar: na edição vai ser liberado formulario para cadastro de Opção(buyOption).*
 
 ### AWS
 - Acesso Deploy da aplicação na AWS [aqui: http://34.224.132.153/](http://34.224.132.153/)
@@ -144,12 +145,10 @@ Para cadastrar um opção de oferta deve se cadastrar uma Oferta(Deal), em seque
  - https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#reference
  - https://stackoverflow.com/questions/604424/how-to-get-an-enum-value-from-a-string-value-in-java/604426
  - https://www.devdiaries.net/blog/Spring-Boot-2-PostgreSQL-JWT-React-Part-3/#websecurityconfigureradapter-configuration
+
 ## Autor
 [Rui Richard Blaese](https://www.linkedin.com/in/ruiblaese/)   
 ruiblaese@gmail.com
-
-:heavy_check_mark: 
-:x:
 
 
 [(voltar)](#índice)
