@@ -135,10 +135,9 @@ Mais uma vez, qualquer dúvida maior pode nos perguntar, boa sorte!
   - Implementar paginação
  
 - Problemas para resolver
-  - Problema com data, ao fazer deploy com docker-compose começou problema com a data, cadastra ("data" -1 dia)
-  - Corrigir exclusão da Oferta(deal) quando já tem Opção(buyDeal)
-
-
+  - Problema com data, está cadastrando "data" -1 dia. (acontece só quando roda no docker-compose) 
+  - Exclusão da Oferta(deal) quando já tem Opção(buyDeal)
+  - Quando diminui a resolução o "menu" some e não aparece no botão do boostrap
 
 ## Referencias
  - https://stackoverflow.com/questions/32074631/spring-boot-application-without-a-datasource
