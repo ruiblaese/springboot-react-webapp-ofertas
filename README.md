@@ -109,7 +109,7 @@ Mais uma vez, qualquer dúvida maior pode nos perguntar, boa sorte!
 `make run-docker-compose`
 
 ### AWS
-- Acesso Deploy da aplicação na AWS [aqui](http://34.224.132.153/)
+- Acesso Deploy da aplicação na AWS [aqui](http://34.224.132.153/) **Estou com problema no Deploy, frontend foi, api reversa parece estar funcionando de fora mas frontend ao requisitar api gera um erro.
 
 ### Melhorias
 - Back-end    
