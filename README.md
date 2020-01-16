@@ -113,7 +113,7 @@ Mais uma vez, qualquer dúvida maior pode nos perguntar, boa sorte!
 *Para cadastrar um Opção de Oferta(buyOption) deve se cadastrar uma Oferta(Deal), em sequencia editar: na edição vai ser liberado formulario para cadastro de Opção(buyOption).*
 
 ### AWS
-- Acesso Deploy da aplicação na AWS [aqui: http://34.224.132.153/](http://34.224.132.153/)
+- Removido do AWS
 
 ### Melhorias
 - Back-end    
