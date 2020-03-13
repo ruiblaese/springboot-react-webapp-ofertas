@@ -1,4 +1,4 @@
-# CDPU - Challenge D.P.U
+# API Java Spring Boot - Publicação de ofertas e suas respectivas opções de compra
 
 ## Índice
 
@@ -13,15 +13,8 @@
 - [Autor](#autor)
 
 ## Contexto
-**Contexto**
 
-O PU é a maior plataforma de ofertas locais do Brasil. Com mais de 30 milhões de usuários cadastrados e milhares de ofertas de gastronomia, entretenimento, estética, turismo e produtos, sua missão é conectar pessoas a serviços com o melhor custo-benefício. 
-
-Ao longo dos anos, o PU vem evoluindo seu modelo de negócios, simplificando e melhorando a experiência do usuário. Hoje, a empresa funciona como uma grande plataforma de vantagens, onde o consumidor pode encontrar facilmente o que procura, quando quiser e de onde estiver, por meio do site ou do aplicativo móvel.
-
-**Necessidade de mercado**
-
-Atualmente precisamos de uma plataforma web de vantagens simplificada do qual conta com a publicação de ofertas e suas respectivas opções de compra, representado pelo seguinte diagrama de classes:
+Precisamos de uma plataforma web de vantagens simplificada do qual conta com a publicação de ofertas e suas respectivas opções de compra, representado pelo seguinte diagrama de classes:
 
 ![alt text](https://github.com/PeixeUrbano/challenge-developer/raw/master/UML-Model-2.png) 
 
