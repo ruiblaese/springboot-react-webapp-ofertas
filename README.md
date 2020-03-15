@@ -112,10 +112,9 @@ Mais uma vez, qualquer dúvida maior pode nos perguntar, boa sorte!
 - Back-end    
   - Implementar mais testes
   - Implementar mais validações
-  - JWT 
+  - JWT
   - Terminar cadastro de Usuário
-  - Swagger
-  - Implementar paginação  
+  - Implementar paginação
 
 - Front-end
   - Edição da Opção de Oferta(buyDeal)
