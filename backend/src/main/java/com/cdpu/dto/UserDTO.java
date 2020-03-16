@@ -16,6 +16,7 @@ public class UserDTO {
 	private String password;
 	@Length(min=3, max=50, message="O nome deve conter entre 3 e 40 caracteres")
 	private String name;
+	@SuppressWarnings("deprecation")
 	@Email(message="Email inválido")
 	private String email;
 
