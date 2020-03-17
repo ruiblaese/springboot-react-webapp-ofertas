@@ -9,7 +9,7 @@ import com.cdpu.response.Response;
 
 
 @RestController
-@RequestMapping("hello")
+@RequestMapping("")
 public class HelloWorldController {
 
 	@GetMapping
