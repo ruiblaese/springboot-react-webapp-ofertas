@@ -7,3 +7,5 @@ run-docker-compose:
 	cd backend && docker build --rm -f "Dockerfile" -t ruiblaese/cdpu-backend:latest .
 	cd frontend && yarn && yarn build
 	docker-compose up -d
+push-heroku:
+	git subtree push --prefix backend heroku master
