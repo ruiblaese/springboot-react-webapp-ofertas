@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ruiblaese/springboot-api-ofertas.svg?branch=master)](https://travis-ci.org/ruiblaese/springboot-api-ofertas)
+
 # API Java Spring Boot - Publicação de ofertas e suas respectivas opções de compra
 
 ## Índice
