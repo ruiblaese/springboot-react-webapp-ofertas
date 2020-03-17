@@ -23,6 +23,6 @@ services:
     depends_on:
       - app
   app:
-    image: ruiblaese/cdpu-backend:latest    
+    build: ./backend/
     depends_on:
       - db
