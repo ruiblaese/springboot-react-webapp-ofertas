@@ -12,7 +12,7 @@ class Home extends Component {
     <React.Fragment>
       <div className="container">
         <div className="row">
-          <h1>Sistema de Ofertas CDPU</h1>
+          <h1>Sistema de Ofertas</h1>
           <p align="justify">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
             imperdiet quam at leo tempor bibendum. Mauris sed ipsum nec nibh

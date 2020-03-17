@@ -37,7 +37,7 @@ const getClassNameForActivePage = (props, pageName) => {
 const Menu = props => (
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <a className="navbar-brand" href="/">
-    Ofertas CDPU
+    Ofertas
     </a>
     <button
       className="navbar-toggler"

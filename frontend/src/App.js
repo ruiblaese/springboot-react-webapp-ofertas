@@ -95,7 +95,7 @@ class App extends Component {
     this.state = {};
   }
   componentDidMount() {
-    document.title = 'Sistema de Ofertas CDPU';
+    document.title = 'Sistema de Ofertas';
   }
   render() {
     console.log(this.state);
