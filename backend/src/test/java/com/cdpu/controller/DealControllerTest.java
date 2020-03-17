@@ -3,13 +3,10 @@ package com.cdpu.controller;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
+
 import java.util.Date;
-import java.util.List;
-import java.util.Optional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,8 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
+
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.ActiveProfiles;
@@ -43,7 +39,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class DealControllerTest {
 	
 	private static final String URL_POST = "/deal";
-	
+
 	private static final Long ID = 1L;
 	private static final Date DATE = new Date();
 	private static final LocalDate TODAY = LocalDate.now();
@@ -51,7 +47,7 @@ public class DealControllerTest {
 	private static final String TEXT = "texto oferta teste";
 	private static final Long TOTAL_SOLD = 1L;
 	private static final TypeDeal TYPE = TypeDeal.PRODUTO;
-	private static final String URL = "link que escolhi";
+	private static final String URL = "/oferta/" + ID;
 	
 	@MockBean
 	DealService service;
@@ -70,13 +66,13 @@ public class DealControllerTest {
 				.accept(MediaType.APPLICATION_JSON))
 		.andExpect(status().isCreated())
 		.andExpect(jsonPath("$.data.id").value(ID))
-		.andExpect(jsonPath("$.data.createDate").value(TODAY.format(getDateFormater())))
-		.andExpect(jsonPath("$.data.publishDate").value(TODAY.format(getDateFormater())))
+		.andExpect(jsonPath("$.data.createDate").isNotEmpty())
+		.andExpect(jsonPath("$.data.publishDate").isNotEmpty())
 		.andExpect(jsonPath("$.data.endDate").value(TODAY.format(getDateFormater())))		
 		.andExpect(jsonPath("$.data.title").value(TITLE))
 		.andExpect(jsonPath("$.data.text").value(TEXT))
 		.andExpect(jsonPath("$.data.totalSold").value(TOTAL_SOLD))		
-		.andExpect(jsonPath("$.data.type").value(TYPE.getValue()))
+		.andExpect(jsonPath("$.data.type").value(TYPE.toString()))
 		.andExpect(jsonPath("$.data.url").value(URL));
 		
 	}
@@ -84,6 +80,7 @@ public class DealControllerTest {
 	
 	private Deal getMockWalletItem() {
 		Deal deal = new Deal();
+		deal.setId(ID);
 		deal.setCreateDate(DATE);
 		deal.setPublishDate(DATE);
 		deal.setEndDate(DATE);
