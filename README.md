@@ -108,8 +108,11 @@ Mais uma vez, qualquer dúvida maior pode nos perguntar, boa sorte!
 ### AWS
 - Removido do AWS
 
-### Heroku
- - https://api-ofertas.herokuapp.com/
+### Heroku SpringBoot API
+- https://api-ofertas.herokuapp.com/
+
+### Frontend ReactJs
+- https://frontend-api-ofertas.netlify.com
 
 ### Melhorias
 - Back-end    
