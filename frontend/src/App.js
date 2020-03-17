@@ -98,7 +98,9 @@ class App extends Component {
     document.title = 'Sistema de Ofertas CDPU';
   }
   render() {
-    return (
+    console.log(this.state);
+    console.log("This is the process.env", process.env.PUBLIC_URL)    
+    return (      
       <div className="App">
         {/* mostra o menu sempre q tiver logado */}
         {login.isLogged() ? (
