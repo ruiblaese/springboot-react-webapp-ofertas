@@ -108,6 +108,9 @@ Mais uma vez, qualquer dúvida maior pode nos perguntar, boa sorte!
 ### AWS
 - Removido do AWS
 
+### Heroku
+ - https://api-ofertas.herokuapp.com/
+
 ### Melhorias
 - Back-end    
   - Implementar mais testes
