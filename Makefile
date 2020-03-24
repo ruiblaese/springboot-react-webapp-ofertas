@@ -9,3 +9,5 @@ run-docker-compose:
 	docker-compose up -d
 push-heroku:
 	git subtree push --prefix backend heroku master
+build-backend:
+	git subtree split --branch backend-build-heroku --prefix backend/	
