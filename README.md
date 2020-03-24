@@ -9,7 +9,7 @@
 - [Projeto](#projeto)  
   - [Tecnologias](#tecnologias-utilizadas)
   - [Instruções](#instruções)
-  - [Acesso Deploy da aplicação na AWS](#aws)
+  - [Deploy](#deploy)
   - [Melhorias](#melhorias)
 - [Referencias](#referencias)
 - [Autor](#autor)
@@ -107,13 +107,14 @@ Mais uma vez, qualquer dúvida maior pode nos perguntar, boa sorte!
 #### Dicas
 *Para cadastrar um Opção de Oferta(buyOption) deve se cadastrar uma Oferta(Deal), em sequencia editar: na edição vai ser liberado formulario para cadastro de Opção(buyOption).*
 
-### AWS
+### Deploy
+#### AWS
 - Removido do AWS
 
-### Heroku SpringBoot API
+#### Heroku SpringBoot API
 - https://api-ofertas.herokuapp.com/
 
-### Frontend ReactJs
+#### Frontend ReactJs
 - https://frontend-api-ofertas.netlify.com
 
 ### Melhorias
