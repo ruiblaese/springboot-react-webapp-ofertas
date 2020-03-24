@@ -5,6 +5,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletResponse;
+
 import com.cdpu.response.Response;
 
 
@@ -12,13 +16,9 @@ import com.cdpu.response.Response;
 @RequestMapping("")
 public class HelloWorldController {
 
-	@GetMapping
-	public ResponseEntity<Response<String>> hello(){
-			
-		Response<String> response = new Response<String>();
-		response.setData("hello world");
-		
-		return ResponseEntity.ok().body(response);
+	@RequestMapping("")
+	void handleRedirect(HttpServletResponse response) throws IOException {
+	  response.sendRedirect("https://frontend-api-ofertas.netlify.com");
 	}
 	
 }
