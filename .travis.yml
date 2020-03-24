@@ -5,8 +5,8 @@ jdk:
 before_install:
 - export TZ=Brazil/East
 - cd backend
-# deploy:
-#     provider: heroku
-#     api_key:
-#         - secure: $SECURE_KEY
-#     app: $APP
+deploy:
+    provider: heroku
+    api_key:
+        - secure: $SECURE_KEY
+    run: "git subtree push --prefix backend heroku master"
