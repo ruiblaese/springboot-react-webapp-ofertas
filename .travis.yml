@@ -4,7 +4,7 @@ jdk:
 - oraclejdk8
 before_install:
 - export TZ=Brazil/East
-- cd backend
+#- cd backend
 # deploy:
 #     provider: heroku
 #     api_key:
