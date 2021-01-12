@@ -25,7 +25,7 @@
   - [Deploy](#deploy)
   - [Melhorias](#melhorias)
 - [Referencias](#referencias)
-- [Autor](#autor)
+- [Contato](#contato)
 
 ## Contexto
 
@@ -159,9 +159,13 @@ Mais uma vez, qualquer dúvida maior pode nos perguntar, boa sorte!
  - https://stackoverflow.com/questions/604424/how-to-get-an-enum-value-from-a-string-value-in-java/604426
  - https://www.devdiaries.net/blog/Spring-Boot-2-PostgreSQL-JWT-React-Part-3/#websecurityconfigureradapter-configuration
 
-## Autor
-[Rui Richard Blaese](https://www.linkedin.com/in/ruiblaese/)   
-ruiblaese@gmail.com
-
+## Contato
+<a href="https://www.linkedin.com/in/ruiblaese/" target="_blank" >
+  <img alt="Linkedin - Rui Richard Blaese" src="https://img.shields.io/badge/Linkedin--%23F8952D?style=social&logo=linkedin">
+</a>
+<a href="mailto:ruiblaese@gmail.com" target="_blank" >
+  <img alt="Email - Rui Richard Blaese" src="https://img.shields.io/badge/Email--%23F8952D?style=social&logo=gmail">
+</a> 
+<br>
 
 [(voltar)](#índice)
