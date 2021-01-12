@@ -1,6 +1,19 @@
-[![Build Status](https://travis-ci.org/ruiblaese/springboot-api-ofertas.svg?branch=master)](https://travis-ci.org/ruiblaese/springboot-api-ofertas)
+<h1 align="center">
+    API Java Spring Boot - Publicação de ofertas e suas respectivas opções de compra
+</h1>
+<p align="center">  
+  <img alt="Made by Rui" src="https://img.shields.io/badge/Made%20by-ruiblaese-%2304D361">
+  
+  <img alt="Made with Java" src="https://img.shields.io/badge/Made%20with-Java-%1f425f">  
+  
+  <img alt="Made with SpringBoot" src="https://img.shields.io/badge/Made%20with-SpringBoot-%1f425f">  
 
-# API Java Spring Boot - Publicação de ofertas e suas respectivas opções de compra
+  <img alt="Project top programing language" src="https://img.shields.io/github/languages/top/ruiblaese/springboot-react-webapp-ofertas">  
+
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/ruiblaese/springboot-react-webapp-ofertas">
+  
+  <img alt="travis-ci" src="https://travis-ci.org/ruiblaese/springboot-api-ofertas.svg?branch=master">
+</p>
 
 ## Índice
 
